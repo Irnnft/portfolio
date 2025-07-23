@@ -13,31 +13,30 @@ const deployedProjects = [
     title: "Website Translate",
     description: "Website Untuk Mentranslate dari berbagai bahasa ke Indonesia atau sebaliknya",
     tech: ["Next.js", "Tailwind CSS", "TypeScript", "Framer Motion", "Shadcn"],
-    link: "https://letlettranslete.vercel.app/", // Ganti dengan link website yang sudah di-deploy
-    image: "/web1.png", // Ganti dengan screenshot proyek Anda di folder `public` (rekomendasi rasio 16:9)
+    link: "https://letlettranslete.vercel.app/",
+    image: "/web1.png",
   },
   {
     title: "Undangan Wedding WEB",
     description: "Platform Undangan Wedding Online berbasis website",
     tech: ["Next.js", "Tailwind CSS", "TypeScript", "Framer Motion","Reactbits","lucid React"],
-    link: "https://ourwedding-xi.vercel.app/", // Ganti dengan link website yang sudah di-deploy
-    image: "/web2.png", // Ganti dengan screenshot proyek Anda di folder `public`
+    link: "https://ourwedding-xi.vercel.app/",
+    image: "/web2.png",
   },
 ];
 
-// DATA POSTER - Ganti dengan poster Anda
+// PERBAIKAN #1: Tambahkan 'title' pada setiap objek poster
 const posters = [
-  {image: "/poster dragon.jpg" }, // Gambar poster di folder `public`
-  {image: "/poster hope.jpg" },
-  {image: "/poster korupsi.jpg" },
-  {image: "/poster Guardian.jpg" },
-  {image: "/poster love.jpg" },
-  {image: "/poster VISION.jpg" },
-  {image: "/poster future.jpg" },
-  {image: "/poster asssasins creed.jpg" },
+  { title: "Dragon Poster", image: "/poster dragon.jpg" },
+  { title: "Hope Typography", image: "/poster hope.jpg" },
+  { title: "Anti-Corruption Campaign", image: "/poster korupsi.jpg" },
+  { title: "Guardian Poster", image: "/poster Guardian.jpg" },
+  { title: "Love Typography", image: "/poster love.jpg" },
+  { title: "Vision Concept", image: "/poster VISION.jpg" },
+  { title: "Future Concept", image: "/poster future.jpg" },
+  { title: "Assassin's Creed Poster", image: "/poster asssasins creed.jpg" },
 ];
 
-// PENINGKATAN #1: Komponen Kartu Proyek yang Ditingkatkan
 const ProjectCard = ({ project, index }: { project: typeof deployedProjects[0], index: number }) => (
   <motion.div
     initial={{ opacity: 0, y: 50 }}
@@ -72,7 +71,6 @@ const ProjectCard = ({ project, index }: { project: typeof deployedProjects[0], 
   </motion.div>
 );
 
-// PENINGKATAN #2: Galeri Poster Interaktif dengan Lightbox
 const PosterGallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
@@ -90,7 +88,14 @@ const PosterGallery = () => {
             onClick={() => setSelectedImage(poster.image)}
             layoutId={poster.image}
           >
-            <Image src={poster.image} fill className="object-cover group-hover:scale-105 transition-transform duration-300" sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 15vw" />
+            {/* PERBAIKAN #2: Tambahkan properti 'alt' dengan nilai dari poster.title */}
+            <Image 
+              src={poster.image} 
+              alt={poster.title} 
+              fill 
+              className="object-cover group-hover:scale-105 transition-transform duration-300" 
+              sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 15vw" 
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
             <div className="absolute inset-0 flex items-end p-4">
               <p className="text-white font-bold text-sm md:text-base opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300">{poster.title}</p>
