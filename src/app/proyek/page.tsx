@@ -23,6 +23,14 @@ const deployedProjects = [
     link: "https://ourwedding-xi.vercel.app/",
     image: "/web2.png",
   },
+  {
+    title: "Al-Quran Digital",
+    description: "Website untuk mengaji dengan tampilan interaktif dan modern",
+    tech: ["Next.js", "Tailwind CSS", "TypeScript", "Framer Motion","Reactbits","lucid React"],
+    link: "https://alquran-v2.vercel.app/",
+    image: "/web3.png",
+  },
+  
 ];
 
 // PERBAIKAN #1: Tambahkan 'title' pada setiap objek poster
