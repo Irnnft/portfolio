@@ -30,6 +30,13 @@ const deployedProjects = [
     link: "https://alquran-v2.vercel.app/",
     image: "/web3.png",
   },
+    {
+    title: "Landing Page Nature",
+    description: "Landing page interaktif di desktop maupun android dengan tampilan elegan dan natura;",
+    tech: ["Next.js", "Tailwind CSS", "TypeScript", "Framer Motion","lucid React"],
+    link: "https://nature-eta-six.vercel.app/",
+    image: "/web4.png",
+  },
   
 ];
 
