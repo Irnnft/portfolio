@@ -25,7 +25,7 @@ const deployedProjects = [
   },
   {
     title: "Al-Quran Digital",
-    description: "Website untuk mengaji dengan tampilan interaktif dan modern",
+    description: "Website untuk mengaji / membaca al quran di desktop dengan tampilan interaktif dan modern",
     tech: ["Next.js", "Tailwind CSS", "TypeScript", "Framer Motion","Reactbits","lucid React"],
     link: "https://alquran-v2.vercel.app/",
     image: "/web3.png",
